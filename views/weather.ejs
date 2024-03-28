@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/headerlinks.ejs") %>
+</head>
+<body>
+    <%- include("partials/navbar.ejs") %>
+
+   <!--Main header-->
+   <div class="container-fluid  main_header">
+    <div class = "row">
+        <div class="col-md-5 col-12 mx-auto">
+            <div class="main_content">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search your city" id="cityname" >
+                    <div class="input-group-append">
+                      <button class="btn btn-secondary" type="button" id="submitbtn">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                </div>
+            </div>
+            <div class="tempInformation">
+                <div class="top_layer">
+                    <p id="day"></p> 
+                   
+                    <p style="margin-left:40px ;"><%= new Date().getDate() %>,</p>
+                    <p id="today_data"></p>
+                    <p><%= new Date().getFullYear() %></p>
+                
+               
+                </div>
+                <div class="main_layer">
+                    <p id="city_name">Get Output Here</p>
+                    <div class="middle_layer data_hide">
+                        <p id="temp"><span id="temp_real_val">0</span> <sup>o</sup>C</p>
+                        <P id="temp_status"> <i class="fa fa-cloud" aria-hidden="true"></i></P>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+   </div>
+
+   <!--Footer section-->
+   <%- include("partials/footer.ejs") %>
+   <script src="js/main.js"></script>
+  <script>
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+const d = new Date();
+let days = weekday[d.getDay()];
+document.getElementById("day").innerHTML = days;
+
+const month= ["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"];
+
+const m = new Date();
+let months = month[m.getMonth()];
+document.getElementById("today_data").innerHTML = months;
+
+  </script>
+</body>
+</html>

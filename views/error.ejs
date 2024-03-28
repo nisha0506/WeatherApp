@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include("partials/headerlinks.ejs") %>
+</head>
+<body>
+    <%- include("partials/navbar.ejs") %>
+
+   <!--Main header-->
+   <div class="container-fluid  main_header">
+    <div class = "row">
+        <div class="col-md-10 col-12 mx-auto">
+            <div class="row">
+                <div class="col-md-12 col-12 main_header_left align-items-center " >
+                    <figure class="errimg" >
+                        <img src="images/404.jpg" alt="Nisha" class="img-fluid"  title="Nisha Singh">
+                       </figure>
+                    <p>Welcome to my Weather app</p>
+                    <h1><%=errorMsg%></h1>
+                    <a href="/" target="_blank"><button>Go to Home Page</button></a>
+                
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   </div>
+   
+   <!--Footer section-->
+   <%- include("partials/footer.ejs") %>
+</body>
+</html>
