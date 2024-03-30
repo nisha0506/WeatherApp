@@ -13,7 +13,7 @@ submitbtnEl.addEventListener("click",async(event) =>{
         datahide.classList.add('data_hide')
     }else{
         try{
-        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityval}&units=metric&appid=834fa9ea467841cf01effa730e129b43`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityval}&units=metric&appid=${process.env.API_KEY}`;
         const response = await fetch(url)
         const data = await response.json()
         const arr = [data]
